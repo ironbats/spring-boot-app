@@ -1,18 +1,24 @@
 package br.com.micro.services.felipe.entity;
 
-import javax.persistence.*;
+
+
+import org.springframework.data.annotation.Id;
+
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 
 
 
-@Entity
+
 @Data
+@Document(collection = "userEntity")
  public class UserEntity {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)	
-	private Long id;	
+	private String id;
+	@Field(value = "name")
 	private String name;
+	@Field(value = "email")
 	private String email;	
 }

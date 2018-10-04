@@ -9,11 +9,6 @@ public class UserDTO {
 	
 	private String email;
 	private String name;
-	private Long id;	
+	private String id;	
 	
-	
-	public static void main(String[] args) {
-		System.out.println(UserDTO.builder().email("sasa"));
 	}
-	
-}

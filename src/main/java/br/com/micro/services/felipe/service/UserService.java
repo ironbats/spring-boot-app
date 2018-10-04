@@ -22,7 +22,7 @@ public class UserService {
 				.name(userEntity.getName()).build();
 	}
 
-	public UserDTO getUserById(long id) {
+	public UserDTO getUserById(String id) {
 		Optional<UserEntity> userById = userRepository.findById(id);
 
 		return UserDTO.builder().email(userById.get().getEmail()).id(id)
