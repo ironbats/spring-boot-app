@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.micro.services.felipe.dto.UserDTO;
-import br.com.micro.services.felipe.service.UserService;
+import br.com.micro.services.service.UserService;
 
 @RestController
 @RequestMapping(path = "/users")
@@ -25,10 +25,10 @@ public class UserController {
 		UserDTO userDto = userService.getUserByEmail(email);
 
 		if (userDto != null && StringUtils.isNotBlank(email)) {
-			return new ResponseEntity<UserDTO>(userDto, HttpStatus.OK);
+			return new ResponseEntity<>(userDto, HttpStatus.OK);
 		}
 
-		return new ResponseEntity<UserDTO>(HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 
 	@GetMapping("/by-id")
@@ -39,9 +39,9 @@ public class UserController {
 
 		if (userDto != null && StringUtils.isNotBlank(userDto.getId())
 				&& StringUtils.isNotBlank(userDto.getEmail())) {
-			return new ResponseEntity<UserDTO>(userDto, HttpStatus.OK);
+			return new ResponseEntity<>(userDto, HttpStatus.OK);
 		}
 
-		return new ResponseEntity<UserDTO>(HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
 }

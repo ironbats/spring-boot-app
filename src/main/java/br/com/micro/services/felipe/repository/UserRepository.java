@@ -12,9 +12,9 @@ public interface UserRepository extends MongoRepository<UserEntity, Long> {
 	static final String FIND_USER_ENTITY_BY_EMAIL = "SELECT u FROM UserEntity  as u WHERE  u.email=:email";
 	//TO MONGODB QUERY
 	static final String FIND_USER_ENTITY_BY_EMAIL_MONGO = "{'email' :?0}";
-	static final String EMAIL_PARAM = "email";	
+	static final String EMAIL_PARAM = "email";
 
-	UserEntity getByEmail(String email);	
+	Optional<UserEntity> getByEmail(String email);
 	Optional<UserEntity> findById(String id);
 	
 

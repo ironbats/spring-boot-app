@@ -1,0 +1,7 @@
+//INSERE UNICO USUARIO
+db.userEntity.insert ( { "name":"felipe","email":"felipe.themarkiron@gmail.com","cpf":"65838346150","genger":"M" } );
+
+//LOGICA PARA INSERIR DIVERSOS USUARIOS
+for (var i = 0 ; i < 1500 ; i ++) { db.userEntity.insert( { "name":"felipe","email":"felipe.themarkiron" + i + "@gmail.com","cpf":"6583834615"+i,"genger":"M" } )}
+
+
